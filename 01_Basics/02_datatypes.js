@@ -20,7 +20,7 @@ let userEmail; // undefined
 const id = Symbol('123')
 const anotherId = Symbol('123')
 
-console.log(id === anotherId);
+// console.log(id === anotherId);
 
 const bigNumber = 32546456464656546n
 
@@ -39,4 +39,28 @@ const myFunction = function () {
   console.log("Hello world");
 }
 
-console.table([typeof bigNumber, typeof heros, typeof id, typeof outsideTemp, typeof userEmail]);
+// console.table([typeof bigNumber, typeof heros, typeof id, typeof outsideTemp, typeof userEmail]);
+
+
+// ++++++++++++++++++++++++++++++++++++++++++++++
+
+// Stack (Primitive), Heap (Non-primitive)
+
+let myYoutubename = "skindeepdotcom"
+let anotherName = myYoutubename
+anotherName = "mf03dotcom"
+
+// console.log(myYoutubename);
+// console.log(anotherName);
+
+let userOne = {
+  email: "user@google.com",
+  bpi: "user@bksh"
+}
+
+let userTwo = userOne
+
+userTwo.email = "mayesha.work@google.com"
+
+console.log(userOne.email);
+console.log(userTwo.email);
