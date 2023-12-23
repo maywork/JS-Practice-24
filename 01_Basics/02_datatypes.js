@@ -60,7 +60,7 @@ let userOne = {
 
 let userTwo = userOne
 
-userTwo.email = "mayesha.work@google.com"
+userTwo.email = "mayesha.work@google.com" // passes to the mutual/original obj
 
 console.log(userOne.email);
 console.log(userTwo.email);
