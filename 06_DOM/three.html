@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM | Chai aur Code part-2</title>
+</head>
+
+<body style="background-color: #212121; color: floralwhite;">
+
+</body>
+
+<script>
+  const div = document.createElement('div')
+  console.log(div);
+  div.className = 'main'
+  div.id = 'myId'
+  div.setAttribute('title', 'generated title') // preferred
+  div.style.backgroundColor = 'purple'
+  div.style.padding = '15px'
+  // div.innerText = "Chai aur Code"
+
+  const addText = document.createTextNode('Chai aur Code') // preferred
+  div.appendChild(addText)
+
+  document.body.appendChild(div)
+</script>
+
+</html>
