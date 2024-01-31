@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Request</title>
+  <style>
+    .container {
+      margin: 0 auto;
+      width: 550px;
+      text-align: center;
+    }
+
+    .img-box {
+      border: 2px solid Pink;
+    }
+
+    img {
+      margin-bottom: 15px;
+    }
+
+    .info {
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+
+<body style="background-color: #212121; color: Pink;">
+  <div class="container">
+    <div class="img-box">
+      <div class="shape">
+        <h2 class="username">This is the Title</h2>
+        <p class="followers">Followers:</p>
+      </div>
+      <img src="" alt="user avatar">
+      <div class="info">0 UNSENT Client has been created. open() not called yet.
+        1 OPENED open() has been called.
+        2 HEADERS_RECEIVED send() has been called, and headers and status are available.
+        3 LOADING Downloading; responseText holds partial data.
+        4 DONE The operation is complete.</div>
+    </div>
+  </div>
+</body>
+<script>
+  const requestUrl = 'https://api.github.com/users/maywork'
+  const xhr = new XMLHttpRequest()
+  xhr.open('GET', requestUrl)
+  xhr.onreadystatechange = function () {
+    console.log(xhr.readyState);
+    if (xhr.readyState === 4) {
+      const data = JSON.parse(this.responseText)
+      console.log(data);
+      const insertName = document.querySelector('.username')
+      const insertFollower = document.querySelector('.followers')
+      insertName.innerHTML = `<h2>${data.login}</h2>`
+      insertFollower.innerHTML = `<p>Followers: ${data.followers}</p>`
+      const insertImg = document.querySelector('img')
+      insertImg.src = data.avatar_url
+    }
+  }
+  xhr.send()
+</script>
+
+</html>
